@@ -30,10 +30,10 @@ class Servico(Base):
     def __str__(self):
         return self.servico
 class Cargo(Base):
-    cargo = models.CharField('Cargo',max_length=100)
+    cargo = models.CharField('Cargo',max_length=100,default='estagiário')
     class Meta:
-        verbose_name= 'Cargo'
-        verbose_name_plural = 'Cargos'
+        verbose_name='Cargo'
+        verbose_name_plural ='Cargos'
     def __str__(self):
         return self.cargo
 class Funcionario(Base):

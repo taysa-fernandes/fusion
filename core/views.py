@@ -16,11 +16,12 @@ class IndexView(FormView):
         context['funcionarios'] = Funcionario.objects.order_by('?').all()
         context['featureses'] = Features.objects.order_by('?').all()
         return context
-    def form_valid(self, form,*args,**kwargs):
+    def form_valid(self, form, *args, **kwargs):
         form.send_mail()
-        messages.success(self.request,'E-mail enviado com sucesso!')
-        return super(IndexView,self).form_valid(form,*args,**kwargs)
-    def form_invalid(self, form,*args,**kwargs):
-        messages.error(self.request,'Erro ao enviar o e-mail!')
-        return super(IndexView,self).form_invalid(form,*args,**kwargs)
+        messages.success(self.request, 'E-mail enviado com sucesso')
+        return super(IndexView, self).form_valid(form, *args, **kwargs)
+
+    def form_invalid(self, form, *args, **kwargs):
+        messages.error(self.request, 'Erro ao enviar e-mail')
+        return super(IndexView, self).form_invalid(form, *args, **kwargs)
 

@@ -73,7 +73,7 @@ class Features(Base):
     )
     nome = models.CharField('Nome',max_length=100)
     icone = models.CharField('Icone', choices=ICONE_CHOICES, max_length=100)
-    detalhe = models.TextField('Detalhe',max_length=100)
+    detalhe = models.TextField('Detalhe',max_length=200)
     class Meta:
         verbose_name = 'Feature'
         verbose_name_plural = 'Featureses'
